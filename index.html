@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todoApp">
 	<head>
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/styles.css">
-		<script src="js/main.js"></script>
+
+	    <script type="text/javascript" src="js/js/angular.js"></script>
+	    <!--<script type="text/javascript" src="js/js/firebase.js"></script>
+	    <script type="text/javascript" src="js/js/angularfire.js"></script>-->
+	    <script src="js/main.js"></script>
+	    <script src="js/js/PresidentsController.js"></script>
+		
 	</head>
-	<body>
+	<body ng-controller="todoController as todos">
+	<h2 >to do list</h2>
+	<h3>Items Remaining: {{todos.remainingTodos()}}</h3>
+	<input type="text" placeholder="Add a new item"><button id = "add">Add</button>
+	<table id = "container">
+		<head>	
+		<tr >
+			<th>Description</th>
+			<th>Completed</th>
+			<th>Remove</th>
+		</tr>
+		</head>
+		<tbody ng-repeat="todo in todos.todoList">
+		<tr>
+			<td>{{todo.description}}</td>
+			<td><input type="checkbox" ng-model="todo.completed" ng-class="{completed: todo.completed}"></td>
+			<td><input type="checkbox" ng-click="todos.deleteTodo($index)"></td>
+		</tr>
+		<!--<tr>
+			<td>Add elements to DOM</td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td>Remove Elements from DOM</td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td>Update Text in the DOM</td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+		</tr>-->
+	</table>
+
+
+
+
+
+
+
+	</table>
+
+	
 	</body>
 </html>
