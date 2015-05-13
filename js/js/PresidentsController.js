@@ -18,7 +18,7 @@ function todoController(){
   this.remainingTodos = remainingTodos;
 
   function addTodo(){
-    this.todoList.unshift({description: this.text, completed: false, remove:false});
+    this.todoList.unshift({description: this.newtask, completed: false, remove:false});
     this.text = null;
   }
 

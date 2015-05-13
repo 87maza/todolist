@@ -16,7 +16,7 @@
 	<body ng-controller="todoController as todos">
 	<h2 >to do list</h2>
 	<h3>Items Remaining: {{todos.remainingTodos()}}</h3>
-	<input type="text" placeholder="Add a new item"><button id = "add">Add</button>
+	<input type="text" placeholder="Add a new item" ng-model = "todos.newtask"><button ng-click= "todos.addTodo()" id = "add">Add</button>
 	<table id = "container">
 		<head>	
 		<tr >
